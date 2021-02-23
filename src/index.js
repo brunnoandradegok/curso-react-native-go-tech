@@ -3,8 +3,6 @@ import {
   SafeAreaView,
   StyleSheet,
   ScrollView,
-  View,
-  Text,
   StatusBar,
 } from 'react-native';
 
@@ -12,14 +10,21 @@ import {
   Colors
 } from 'react-native/Libraries/NewAppScreen';
 
+import { Title, Icon, Card } from './components'
+
+// Images
+import img from './assets/images/android.png'
+
 const App = () => {
   return (
     <>
       <StatusBar barStyle="dark-content" />
       <SafeAreaView>
         <ScrollView
-          contentInsetAdjustmentBehavior="automatic"
           style={styles.scrollView}>
+          <Title text="Curso de React Native" />
+          {/* <Icon uri={img} /> */}
+          <Card uri={img} />
         </ScrollView>
       </SafeAreaView>
     </>
@@ -28,7 +33,7 @@ const App = () => {
 
 const styles = StyleSheet.create({
   scrollView: {
-    backgroundColor: Colors.lighter,
+    
   },
   engine: {
     position: 'absolute',
