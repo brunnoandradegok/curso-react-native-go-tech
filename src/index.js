@@ -1,73 +1,20 @@
 import React from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  StatusBar,
-} from 'react-native';
+import { ThemeProvider } from 'styled-components'
 
-import {
-  Colors
-} from 'react-native/Libraries/NewAppScreen';
+import light from './theme/light'
 
-import { Title, Icon, Card } from './components'
-
-// Images
-import img from './assets/images/android.png'
+// Pages
+import Home from './screens/Home'
+import CourseDetails from './screens/CourseDetails'
 
 const App = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <SafeAreaView>
-        <ScrollView
-          style={styles.scrollView}>
-          <Title text="Curso de React Native" />
-          {/* <Icon uri={img} /> */}
-          <Card uri={img} />
-        </ScrollView>
-      </SafeAreaView>
-    </>
+    <ThemeProvider theme={light}>
+      {/* <Home /> */}
+      <CourseDetails />
+    </ThemeProvider>
   );
 };
 
-const styles = StyleSheet.create({
-  scrollView: {
-    
-  },
-  engine: {
-    position: 'absolute',
-    right: 0,
-  },
-  body: {
-    backgroundColor: Colors.white,
-  },
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-    color: Colors.black,
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-    color: Colors.dark,
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-  footer: {
-    color: Colors.dark,
-    fontSize: 12,
-    fontWeight: '600',
-    padding: 4,
-    paddingRight: 12,
-    textAlign: 'right',
-  },
-});
 
 export default App;

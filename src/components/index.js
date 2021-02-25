@@ -5,6 +5,10 @@ import Icon from './Icon'
 import ItemList from './ItemList'
 import Button from './Button'
 import Course from './Course'
+import Container from './Container'
+import Content from './Content'
+import TextArea from './TextArea'
+import Comment from './Comment'
 
 export {
   Title,
@@ -13,5 +17,9 @@ export {
   Icon,
   ItemList,
   Button,
-  Course
+  Course,
+  Container,
+  Content,
+  TextArea,
+  Comment
 }
