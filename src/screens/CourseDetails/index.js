@@ -1,6 +1,9 @@
 import React from 'react'
 import YoutubePlayer from 'react-native-youtube-iframe'
 
+// Context 
+import { useCourses } from '../../context/courses/index.context'
+
 // Components
 import {
   Container,
@@ -22,6 +25,10 @@ import circleImg from '../../assets/icons/circle.png'
 import chevronLeftImg from '../../assets/icons/chevron-left.png'
 
 const CourseDetails = () => {
+  const { courseList } = useCourses()
+
+  console.log("DETALHE: ", courseList)
+
   return (
     <Container>
         <S.ContentPlayer>

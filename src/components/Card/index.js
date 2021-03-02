@@ -6,7 +6,7 @@ import * as S from './styles'
 const Card = ({ uri }) => {
   return (
     <S.Container>
-      <S.Img source={uri} resizeMode="contain" />
+      <S.Img source={{ uri: uri }} resizeMode="contain" />
     </S.Container>
   )
 }

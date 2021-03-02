@@ -11,4 +11,7 @@ export const Container = styled.View`
   elevation: 2;
 `
 
-export const Img = styled.Image``
+export const Img = styled.Image`
+  width: 70%;
+  height: 70%;
+`
