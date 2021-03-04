@@ -1,8 +1,10 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { Alert } from 'react-native'
+import { useRoute } from '@react-navigation/native'
 import YoutubePlayer from 'react-native-youtube-iframe'
 
-// Context 
-import { useCourses } from '../../context/courses/index.context'
+// Api
+import api from '../../config/api'
 
 // Components
 import {
@@ -13,7 +15,8 @@ import {
   ItemList,
   TextArea,
   Button,
-  Comment
+  Comment,
+  Loading
 } from '../../components'
 
 // Styles 
@@ -21,46 +24,100 @@ import * as S from './styles'
 
 // Images
 import checkImg from '../../assets/icons/check.png'
+import checkedImg from '../../assets/icons/checked.png'
 import circleImg from '../../assets/icons/circle.png'
 import chevronLeftImg from '../../assets/icons/chevron-left.png'
 
-const CourseDetails = () => {
-  const { courseList } = useCourses()
+const CourseDetails = ({ navigation }) => {
+  const { params } = useRoute()
+  const [course, setCourse] = useState(null)
+  const [moduleSelect, setModuleSelect] = useState(null)
+  const [comment, setComment] = useState('')
+  const [loading, setLoading] = useState(true)
 
-  console.log("DETALHE: ", courseList)
+  console.log("PARAMS: ", params)
+
+  const findCourse = async () => {
+    try {
+      const res = await api.get(`/courses/${params.id}?_embed=comments`)
+
+      console.log("COURSE: ", res)
+      setCourse(res.data)
+      setModuleSelect(res.data?.content[0])
+      setLoading(false)
+    } catch (err) {
+      console.log("Error: ", err.response)
+      setLoading(false)
+    }
+  }
+
+  console.log("MD: ", moduleSelect)
+
+  useEffect(() => {
+    setTimeout(() => {
+      findCourse()
+    }, 1000)
+  }, []);
+
+  const handleSendComment = async () => {
+    if (!comment) {
+      return Alert.alert('Preencha o campo de comentário para continuar!')
+    }
+
+    setLoading(true)
+
+    try {
+      await api.post('/comments', {
+        body: comment,
+        courseId: params.id
+      })
+
+      findCourse()
+      setComment('')
+      setLoading(false)
+      Alert.alert('Tudo certo!', 'Seu comentário foi adicionado com sucesso!')
+    } catch (err) {
+      console.log("Error Comment: ", err)
+      setLoading(false)
+    }
+  }
 
   return (
     <Container>
+      {loading && <Loading />}
         <S.ContentPlayer>
-          <S.BackButton>
+          <S.BackButton onPress={() => navigation.goBack()}>
             <Icon uri={chevronLeftImg} />
           </S.BackButton>
           <YoutubePlayer
             height={250}
             play={false}
-            videoId={"C8M94QLJy0o"}
+            videoId={moduleSelect?.video}
           />
         </S.ContentPlayer>
         <Content>
           <S.InfosBase>
             <S.Infos>
-              <Title size={18} weight="bold" color="green">Introdução ao React</Title>
-              <Title size={16} color="gray2">Julio Augusto</Title>
-              <Title color="gray2">12 hrs</Title>
+            <Title size={18} weight="bold" color="green">{moduleSelect?.title}</Title>
+              <Title size={16} color="gray2">{course?.teacher}</Title>
+              <Title color="gray2">{`${course?.duration} hrs`}</Title>
             </S.Infos>
           </S.InfosBase>
           <S.Section>
             <Title size={18} weight={600} color="gray2">Descrição</Title>
-            <Title size={16} color="gray3">Aprenda a criar aplicações com NodeJs utilizando o framework Express, se conectando a bancos de dados relacionais e não relacionais, tudo isso utilizando o JavaScript do lado do servidor.</Title>
+            <Title size={16} color="gray3">{course?.description}</Title>
           </S.Section>
           <S.Section>
             <Title size={18} weight={600} color="gray2">Conteudo</Title>
             <S.List>
-              <ItemList icon={checkImg} text="Introdução do NodeJS" />
-              <ItemList icon={checkImg} text="Donwload e instalação do NodeJS" />
-              <ItemList icon={checkImg} text="Executando arquivos JavaScript no Node" />
-              <ItemList icon={checkImg} text="Respondendo requisições HTTP com Node" />
-              <ItemList icon={checkImg} text="Visão geral do NPM, Express e Nodemon" />
+              {course?.content.map((module, index) => (
+                <ItemList
+                  key={index}
+                  icon={moduleSelect?.title === module?.title ? checkedImg : checkImg}
+                  text={module?.title}
+                  onPress={() => setModuleSelect(module)}
+                />
+              ))}
             </S.List>
           </S.Section>
           <S.Section>
@@ -68,24 +125,25 @@ const CourseDetails = () => {
             <TextArea
               multiline={true}
               numberOfLines={5}
+              onChangeText={(e) => setComment(e)}
               placeholder="Deixe seu comentário"
               placeholderTextColor="#000"
+              value={comment}
             />
             <S.ButtonContent>
-              <Button title="Publicar" onPress={() => alert()} />
+              <Button title="Publicar" onPress={() => handleSendComment()} />
             </S.ButtonContent>
           </S.Section>
 
           <S.Section>
-            <Title>2 comentários neste curso</Title>
-            <Comment
-              photo={circleImg} 
-              comment="Ja tentei todas as soluções apresentadas. quanto tento reinstalar com a mudança sugerida, o mysql nem instala, fica dando erro."
-            />
-            <Comment
-              photo={circleImg}
-              comment="Estava com o mesmo problema, fiz da forma que o Victor disse e deu certo. Obrigado!"
-            />
+          <Title>{`${course?.comments.length} comentários neste curso`}</Title>
+            {course?.comments.map((comment) => (
+              <Comment
+                key={comment.id}
+                photo={circleImg} 
+                comment={comment.body}
+              />
+            ))}
           </S.Section>
         </Content>
     </Container>
