@@ -1,0 +1,382 @@
+{
+  "categories": [
+    {
+      "id": 1,
+      "category": "Desenvolvimento"
+    },
+    {
+      "id": 2,
+      "category": "UI/UX"
+    },
+    {
+      "id": 3,
+      "category": "Marketing"
+    }
+  ],
+  "courses": [
+    {
+      "id": 2,
+      "categoryId": 1,
+      "name": "React",
+      "logo": "https://raw.githubusercontent.com/JulioAugustoS/curso-react-native-basico/main/src/assets/images/react.png",
+      "ratio": 0.83,
+      "description": "Domine a criação de aplicativos web com o React e Redux. Desde aplicações simples às mais complexas com usos de Rotas protegidas e muito mais.",
+      "duration": 12,
+      "level": "Iniciante",
+      "teacher": "Guilherme Ramos",
+      "content": [
+        {
+          "id": 1,
+          "title": "Introdução ao React",
+          "video": "C8M94QLJy0o"
+        },
+        {
+          "id": 2,
+          "title": "Download e instalação do ambiente",
+          "video": "3ksM5aOYtIc"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "categoryId": 1,
+      "name": "NodeJS",
+      "logo": "https://raw.githubusercontent.com/JulioAugustoS/curso-react-native-basico/main/src/assets/images/node.png",
+      "ratio": 0.78,
+      "description": "Crie sistemas web dinâmicos e complexos que rodam no back end. Faça aplicações utilizando REST, Socket, Express e outros módulos.",
+      "duration": 12,
+      "level": "Iniciante",
+      "teacher": "Julio Augusto",
+      "content": [
+        {
+          "id": 3,
+          "title": "Introdução ao NodeJS",
+          "video": "jqrKQEJ6DpY"
+        },
+        {
+          "id": 4,
+          "title": "Download e instalação do ambiente",
+          "video": "qxkXSDTL5LY"
+        },
+        {
+          "id": 5,
+          "title": "Executando arquivos javascript no NodeJS",
+          "video": "7Oem0XPdTbg"
+        },
+        {
+          "id": 6,
+          "title": "Respondendo requisições HTTP",
+          "video": "Wb4W0XvZ3h4"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "categoryId": 1,
+      "name": "Swift",
+      "logo": "https://raw.githubusercontent.com/JulioAugustoS/curso-react-native-basico/main/src/assets/images/swift.png",
+      "ratio": 0.86,
+      "description": "O curso completo de swift possui 30 aulas, nele o aluno aprenderá a trabalhar com essa nova linguagem lançada pela apple, ela substitui a antiga Objective C que por 20 anos foi utilizada para os desenvolvimentos MAC, IOS e outros da apple, neste curso é mostrado o passo a passo da documentação desta excelente linguagem, adquira já o curso e aprenda a programar com swift.",
+      "duration": 22,
+      "level": "Avançado",
+      "teacher": "Marcos Barbosa",
+      "content": [
+        {
+          "id": 7,
+          "title": "Introdução ao Swift",
+          "video": "9PMIV4tyNnQ"
+        },
+        {
+          "id": 8,
+          "title": "Download e instalação do ambiente",
+          "video": "6m6iIBTsfKw"
+        },
+        {
+          "id": 9,
+          "title": "Sintaxe da Linguagem",
+          "video": "mHGfQ8AU33Q"
+        },
+        {
+          "id": 10,
+          "title": "Constantes e Variaveis",
+          "video": "Lwd4_S6lqRk"
+        },
+        {
+          "id": 11,
+          "title": "Concatenando variaveis",
+          "video": "VnEcI3WPy3Y"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "categoryId": 1,
+      "name": "GO",
+      "logo": "https://raw.githubusercontent.com/JulioAugustoS/curso-react-native-basico/main/src/assets/images/go.png",
+      "ratio": 0.64,
+      "description": "Nesse curso você vai aprender a linguagem Go, criada pelo Google para poder ter alto poder de processamento utilizando pouco recursos.",
+      "duration": 23,
+      "level": "Iniciante",
+      "teacher": "Felipe Santos",
+      "content": [
+        {
+          "id": 12,
+          "title": "Introdução ao Go",
+          "video": "WiGU_ZB-u0w"
+        },
+        {
+          "id": 13,
+          "title": "Download e instalação do ambiente",
+          "video": "jXA0O5b-F1g"
+        },
+        {
+          "id": 14,
+          "title": "Configurando GOPATH",
+          "video": "CvH9fC2eYO8"
+        },
+        {
+          "id": 15,
+          "title": "Instalando IDE e ferramentas",
+          "video": "n7PZo55Wl5A"
+        },
+        {
+          "id": 16,
+          "title": "Sintaxe da Linguagem",
+          "video": "V9zfX8Yhc9g"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "categoryId": 1,
+      "name": "Android",
+      "logo": "https://raw.githubusercontent.com/JulioAugustoS/curso-react-native-basico/main/src/assets/images/android.png",
+      "ratio": 0.78,
+      "description": "Na Formação Android você vai aprender a construir Apps do zero. Desde dominar a IDE Android Studio e entender os fundamentos do framework do Android, até criar funcionalidades complexas, como integração com serviços externos, além de sincronização de dados off-line.",
+      "duration": 33,
+      "level": "Avançado",
+      "teacher": "Giovanne Guerra",
+      "content": [
+        {
+          "id": 17,
+          "title": "Introdução ao Android",
+          "video": "kpOgYSptDgI"
+        },
+        {
+          "id": 18,
+          "title": "Download e instalação do ambiente",
+          "video": "sgRYN6-nnR4"
+        },
+        {
+          "id": 19,
+          "title": "Sintaxe da Linguagem",
+          "video": "b8XUchEXjNE"
+        },
+        {
+          "id": 20,
+          "title": "Constantes e Variaveis",
+          "video": "p_JJiNpds4Y"
+        },
+        {
+          "id": 21,
+          "title": "Concatenando variaveis",
+          "video": "Sy6U99DllzU"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "categoryId": 2,
+      "name": "Figma",
+      "logo": "https://raw.githubusercontent.com/JulioAugustoS/curso-react-native-basico/main/src/assets/images/figma.png",
+      "ratio": 0.6,
+      "description": "Aprenda a trabalhar com Design Digital com esta ferramenta de interface simples e intuitiva, para alcançar ótimos resultados e destacar-se profissionalmente como UI designer.",
+      "duration": 27,
+      "level": "Avançado",
+      "teacher": "Valeria Hévia",
+      "content": [
+        {
+          "id": 22,
+          "title": "Introdução ao Figma",
+          "video": "oGD4ixajvs8"
+        },
+        {
+          "id": 23,
+          "title": "Auto-layout no Figma",
+          "video": "cMsh2PG_XGA"
+        },
+        {
+          "id": 24,
+          "title": "Tipografias para tela",
+          "video": "s9r_fLXbWn4"
+        },
+        {
+          "id": 25,
+          "title": "Trabalhando com cores em interfaces",
+          "video": "zT9uwJqM6aM"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "categoryId": 2,
+      "name": "Sketch",
+      "logo": "https://raw.githubusercontent.com/JulioAugustoS/curso-react-native-basico/main/src/assets/images/sketch.png",
+      "ratio": 1,
+      "description": "Aprenda design de sites e aplicativos com o software pioneiro do mercado para design de interface (UI) como um profissional.",
+      "duration": 23,
+      "level": "Iniciante",
+      "teacher": "Raul Souza",
+      "content": [
+        {
+          "id": 26,
+          "title": "Introdução ao Sketch",
+          "video": "8aTZgbVdQKs"
+        },
+        {
+          "id": 27,
+          "title": "Auto-layout no Sketch",
+          "video": "v5zBFa0-_Vg"
+        },
+        {
+          "id": 28,
+          "title": "Tipografias para tela",
+          "video": "Jv4eBgtT_0c"
+        },
+        {
+          "id": 29,
+          "title": "Trabalhando com cores em interfaces",
+          "video": "yl2AfkZhT0E"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "categoryId": 2,
+      "name": "Zeplin",
+      "logo": "https://raw.githubusercontent.com/JulioAugustoS/curso-react-native-basico/main/src/assets/images/zeplin.png",
+      "ratio": 0.93,
+      "description": "Esse curso vai te ensinar Zeplin, a ferramenta que te permite ter uma comunicação rápida e eficaz com desenvolvedores e programadores Front-end.",
+      "duration": 22,
+      "level": "Iniciante",
+      "teacher": "Magno Expedito",
+      "content": [
+        {
+          "id": 30,
+          "title": "Introdução ao Zeplin",
+          "video": "1CcHi_wSscg"
+        },
+        {
+          "id": 31,
+          "title": "Zeplin, diferença entre gratuito e pago",
+          "video": "2eAIqWMS0gw"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "categoryId": 3,
+      "name": "Google Analytics ",
+      "logo": "https://raw.githubusercontent.com/JulioAugustoS/curso-react-native-basico/main/src/assets/images/google-analytics.png",
+      "ratio": 0.8,
+      "description": "Aprenda de uma vez a analisar com precisão o retorno do seu site, partindo do zero até o pouco explorado do Google Analytics.",
+      "duration": 37,
+      "level": "Iniciante",
+      "teacher": "Rayana Oliveira",
+      "content": [
+        {
+          "id": 36,
+          "title": "Introdução ao Google Analytics",
+          "video": "WT8NnZu7UeA"
+        },
+        {
+          "id": 37,
+          "title": "Conseguindo o ID e código de acompanhamento",
+          "video": "rJSQd9HK9dY"
+        },
+        {
+          "id": 38,
+          "title": "Atenção: Entenda seu código de acompanhamento",
+          "video": "4j15zpm-szk"
+        },
+        {
+          "id": 39,
+          "title": "Última verificação: Propriedades e referências",
+          "video": "6YV3_POUmc4"
+        },
+        {
+          "id": 40,
+          "title": "Instalação manual por HTML e propriedades",
+          "video": "e3E806pBoBE"
+        },
+        {
+          "id": 41,
+          "title": "Instalação por Google Tag Manager (GTM) no seu site",
+          "video": "4OgaEQtnuzc"
+        }
+      ]
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "Ja tentei todas as soluções apresentadas. quanto tento reinstalar com a mudança sugerida, o mysql nem instala, fica dando erro.",
+      "courseId": 2
+    },
+    {
+      "id": 2,
+      "body": "Estava com o mesmo problema, fiz da forma que o Victor disse e deu certo. Obrigado!",
+      "courseId": 2
+    },
+    {
+      "body": "Teste",
+      "courseId": 2,
+      "id": 3
+    },
+    {
+      "body": "Teste 2",
+      "courseId": 2,
+      "id": 4
+    },
+    {
+      "body": "Teste 2",
+      "courseId": 2,
+      "id": 5
+    },
+    {
+      "body": "Teste 2",
+      "courseId": 2,
+      "id": 6
+    },
+    {
+      "body": "Teste 24",
+      "courseId": 2,
+      "id": 7
+    },
+    {
+      "body": "Teste 24",
+      "courseId": 2,
+      "id": 8
+    },
+    {
+      "body": "Teste 35353",
+      "courseId": 2,
+      "id": 9
+    },
+    {
+      "body": "Teste de comentário",
+      "courseId": 3,
+      "id": 10
+    },
+    {
+      "body": "Testando",
+      "courseId": 3,
+      "id": 11
+    },
+    {
+      "body": "Teste",
+      "courseId": 2,
+      "id": 12
+    }
+  ]
+}
